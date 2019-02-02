@@ -1,3 +1,6 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 export const environment = {
-  production: true
+  production: true,
+  modules: [BrowserAnimationsModule],
 };
