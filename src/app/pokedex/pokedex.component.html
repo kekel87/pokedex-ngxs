@@ -1,0 +1,24 @@
+<mat-progress-bar color="accent" *ngIf="loading$ | async" mode="query"></mat-progress-bar>
+
+<cdk-virtual-scroll-viewport #virtualViewport [itemSize]="itemSize" [minBufferPx]="minBufferPx" [maxBufferPx]="maxBufferPx">
+  <mat-list>
+    <ng-container *cdkVirtualFor="let index of indexes$ | async; trackBy: trackByIndex">
+      <mat-list-item *ngIf="displayPokemon(index) | async as pokemon; else placeHolder">
+        <img matListAvatar [src]="pokemon.ThumbnailImage" [alt]="pokemon.ThumbnailAltText">
+        <h3 matLine> {{ pokemon.name }} </h3>
+        <p matLine>
+          <span>#{{ pokemon.number }} </span>
+          <span *ngFor="let type of pokemon.type" class="type" [ngClass]="type">{{ type }}</span>
+        </p>
+      </mat-list-item>
+    </ng-container>
+  </mat-list>
+</cdk-virtual-scroll-viewport>
+
+<ng-template #placeHolder>
+  <mat-list-item>
+    <div matListAvatar class="place-holder"></div>
+    <h3 matLine class="place-holder square"></h3>
+    <p matLine class="place-holder square"></p>
+  </mat-list-item>
+</ng-template>

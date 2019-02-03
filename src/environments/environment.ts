@@ -1,4 +1,8 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from '~app/shared/api/in-memory-data';
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -6,6 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export const environment = {
   production: false,
   modules: [
+    NgxsReduxDevtoolsPluginModule.forRoot({
+      name: 'Pokedex NGXS',
+      maxAge: 50,
+    }),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      delay: 500,
+      post204: false,
+      put204: false,
+    }),
     BrowserAnimationsModule,
   ],
 };

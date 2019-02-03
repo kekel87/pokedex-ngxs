@@ -1,0 +1,34 @@
+@import 'types';
+
+mat-progress-bar {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+cdk-virtual-scroll-viewport {
+  height: 100%;
+}
+
+.mat-list-base .mat-list-item .mat-line:nth-child(n+2) {
+  margin-top: 5px;
+}
+
+.type {
+  padding: 2px 5px;
+  margin: 0px 1px;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.place-holder {
+  background-color: lightgrey;
+
+  &.square {
+    height: 15px;
+    width: 100px;
+    margin-left: 10px;
+  }
+}

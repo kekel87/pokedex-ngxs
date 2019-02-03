@@ -1,27 +1,23 @@
 # PokedexNgxs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+## Purpose :
 
-## Development server
+Practicing NGXS 🚀, with powerful pokedex.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I also tried to use `@anguar/material`'s VirtualScroll, with infinite scroll, but without keeping all data in app state (to manage big data set, without consume lot of ram 🔥).
 
-## Code scaffolding
+I used `angular-in-memory-web-api` to mock API.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Encountered problem :
 
-## Build
+- Async action dispatching order : https://github.com/ngxs/store/issues/139
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Links :
 
-## Running unit tests
+- https://ngxs.gitbook.io/ngxs
+- https://material.angular.io/cdk/scrolling/overview
+- https://github.com/angular/in-memory-web-api
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+------
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+*This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.*
